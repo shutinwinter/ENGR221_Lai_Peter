@@ -1,0 +1,33 @@
+# Pseudocode for Insertion Sort
+DEFINE insertionSort(A):
+    FOR i from 1 to length(A) - 1:
+        j = i
+        WHILE j > 0 and A[j-1] > A[j]:
+            SWAP A[j] and A[j-1]
+            j = j - 1
+
+# Pseudocode for Bubble Sort
+DEFINE bubbleSort(A):
+    PRINT(A)
+    FOR i from 0 to length(A) - 2:
+        FOR j from 0 to length(A) - 2 - i:
+            IF A[j] > A[j+1]:
+                SWAP A[j] and A[j+1]
+        print(A)
+
+# Function to generate a random list
+def createRandomList(size):
+    return list of 'size' random integers
+
+# Function to measure sorting runtime
+DEFINE getRuntime(sortingFunction, size):
+    A = RandomList(size)
+    startTime = current time
+    sortingFunction(A)
+    endTime = current time
+    return endTime - startTime
+
+# Running and comparing sorting functions
+if __name__ == '__main__':
+    print(getRuntime(insertionSort, 100))
+    print(getRuntime(bubbleSort, 100))
